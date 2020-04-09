@@ -60,40 +60,44 @@ public class Questions {
 	public String sandwichFilling(String sandwich) {
 //		sandwich.replaceAll("+*bread", "");
 //		sandwich.replaceAll("bread*+", "");#
-		sandwich.toLowerCase();
+		sandwich = sandwich.toLowerCase();
 		String[] sand = sandwich.split("bread");
-//		System.out.println(sandwich);
+		
+		System.out.println(sandwich);
 		String gsm ="";
-		String retstr;
+		String retstr="";
 		try {
-			
+			System.out.println("__");
 		String msg = sand[1];
 		char[] temp = msg.toCharArray();
 		
 		char[] which = new char[msg.length()];
 		int k = 0;
-	//	System.out.println("_____________________");
-		//System.out.println(msg);
-		//System.out.println(sand[1].length());
-	//	System.out.println(which.length);
-		//System.out.println("_____________________");
+		System.out.println("_____________________");
+		System.out.println(msg);
+		System.out.println(sand[1].length());
+	System.out.println(which.length);
+	System.out.println("_____________________");
 		for(int i=sand[1].length() ; i>0 ;i--) {
 			
-		//	System.out.println(i);
-			//System.out.println(k);
+			System.out.println(i);
+			System.out.println(k);
 			which[k] = temp[i-1];
 			gsm = String.copyValueOf(which);
 			k++;
-			//System.out.println(which);
+			System.out.println(which);
 		}
-		//System.out.println("here");
-		//gsm = String.copyValueOf(which);
+		System.out.println("here");
+		System.out.println(which);
+		gsm = String.copyValueOf(which);
 		retstr = gsm;
+		System.out.println("________________\n"+retstr +"__"+gsm);
 		}catch(java.lang.ArrayIndexOutOfBoundsException e) {
 			
-		retstr = gsm;
+		
 		}
-		return retstr;
+		if(sandwich.lastIndexOf("bread")==sandwich.indexOf("bread")) {return "";}else {return gsm;}
+		
 	}
 
 	/**
