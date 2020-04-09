@@ -72,21 +72,21 @@ public class Questions {
 		
 		char[] which = new char[msg.length()];
 		int k = 0;
-		System.out.println("_____________________");
-		System.out.println(msg);
-		System.out.println(sand[1].length());
-		System.out.println(which.length);
-		System.out.println("_____________________");
+	//	System.out.println("_____________________");
+		//System.out.println(msg);
+		//System.out.println(sand[1].length());
+	//	System.out.println(which.length);
+		//System.out.println("_____________________");
 		for(int i=sand[1].length() ; i>0 ;i--) {
 			
-			System.out.println(i);
-			System.out.println(k);
+		//	System.out.println(i);
+			//System.out.println(k);
 			which[k] = temp[i-1];
 			gsm = String.copyValueOf(which);
 			k++;
-			System.out.println(which);
+			//System.out.println(which);
 		}
-		System.out.println("here");
+		//System.out.println("here");
 		//gsm = String.copyValueOf(which);
 		retstr = gsm;
 		}catch(java.lang.ArrayIndexOutOfBoundsException e) {
@@ -240,21 +240,26 @@ public class Questions {
 
 	public int largest(String input) {
 		ArrayList<String> innies = new ArrayList<String>();
-		int[] arr = new int[100]; 
-				String[] strs = input.split(" ");
-		for(int i = 0; i< strs.length -1; i++ ) {
-			innies.add(strs[i]);
-		}
-		int last = 0;
 		int MAXSUM=0;
+		int[] arr = new int[100]; 
+				String[] strs = input.split("\\s");
+		//		System.out.println(strs[0].toString());
+		for(int i = 0; i< strs.length; i++ ) {
+			innies.add(strs[i]);
+			
+		}
+		//System.out.println(innies);
+		int last = 0;
+		
 		// innies.forEach((ele)->{ //handling strings of 22....33....44 seperatelu
-			for(int q = 0;q<innies.size()-1;q++) {
+			for(int q = 0;q<innies.size();q++) {
 			 char[] chars = innies.get(q).toCharArray();
 			int sum=0;
 			int current=0;
 			
-			for(int j = 0; j<chars.length-1;j++) {
+			for(int j = 0; j<chars.length;j++) {
 				current = Integer.parseInt(String.valueOf(chars[j]));
+				//System.out.println(current);
 				sum = current + sum;
 				if(sum>=MAXSUM) {MAXSUM = sum;}
 				
